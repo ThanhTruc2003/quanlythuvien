@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\Quanlythuvien\\ThuVien\\ThuVien\\ThuVien.csproj": {}
+    "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\quanlythuvien-main\\quanlythuvien-main\\ThuVien\\ThuVien.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\Quanlythuvien\\ThuVien\\ThuVien\\ThuVien.csproj": {
+    "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\quanlythuvien-main\\quanlythuvien-main\\ThuVien\\ThuVien.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\Quanlythuvien\\ThuVien\\ThuVien\\ThuVien.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\quanlythuvien-main\\quanlythuvien-main\\ThuVien\\ThuVien.csproj",
         "projectName": "ThuVien",
-        "projectPath": "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\Quanlythuvien\\ThuVien\\ThuVien\\ThuVien.csproj",
+        "projectPath": "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\quanlythuvien-main\\quanlythuvien-main\\ThuVien\\ThuVien.csproj",
         "packagesPath": "C:\\Users\\Lenovo Thinkpad S3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\Quanlythuvien\\ThuVien\\ThuVien\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\quanlythuvien-main\\quanlythuvien-main\\ThuVien\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo Thinkpad S3\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
