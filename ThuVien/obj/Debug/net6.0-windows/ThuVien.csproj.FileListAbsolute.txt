@@ -28,3 +28,4 @@ C:\Users\Lenovo Thinkpad S3\Downloads\quanlythuvien-main\quanlythuvien-main\ThuV
 C:\Users\Lenovo Thinkpad S3\Downloads\quanlythuvien-main\quanlythuvien-main\ThuVien\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Lenovo Thinkpad S3\Downloads\quanlythuvien-main\quanlythuvien-main\ThuVien\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Lenovo Thinkpad S3\Downloads\quanlythuvien-main\quanlythuvien-main\ThuVien\obj\Debug\net6.0-windows\ThuVien.csproj.CopyComplete
+C:\Users\Lenovo Thinkpad S3\Downloads\quanlythuvien-main\quanlythuvien-main\ThuVien\obj\Debug\net6.0-windows\ThuVien.Form1.resources
