@@ -30,7 +30,7 @@ namespace ThuVien.GUI
             SoLuong = Convert.ToInt32(txbSoLuong.Text);
             CreateBookBUS bus = new CreateBookBUS();
             bool isSuccess = bus.Insert(new CreateBookDTO(TenSach, NhaXuatBan, SoLuong, SoLuong));
-            if(isSuccess)
+            if (isSuccess == true)
             {
                 MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txbTenSach.Text = "";

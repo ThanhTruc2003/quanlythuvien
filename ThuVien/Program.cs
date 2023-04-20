@@ -1,3 +1,4 @@
+using System.Drawing.Drawing2D;
 using ThuVien.GUI;
 
 namespace ThuVien
@@ -13,7 +14,7 @@ namespace ThuVien
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new CreateBook());
+            Application.Run(new Login());
         }
     }
 }
