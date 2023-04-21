@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using DTO;
+using DAL;
+using System.Data;
 namespace ThuVien.BUS
 {
-    internal class UpdateBookBUS
+    public class UpdateBookBUS
     {
+
+        private UpdateBookDAL dal = new UpdateBookDAL();
+        public UpdateBookDTO getInforBookByID(Int32 book_id)
+        {
+            return dal.getInforBookByID(book_id);
+        }
+        public bool updateBook(UpdateBookDTO dto_book)
+        {
+            return dal.Update(dto_book);
+        }
     }
 }

@@ -34,13 +34,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -51,9 +50,9 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Image = global::ThuVien.Properties.Resources.icons8_edit_50;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(351, 382);
+            this.button1.Location = new System.Drawing.Point(470, 381);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 50);
+            this.button1.Size = new System.Drawing.Size(99, 52);
             this.button1.TabIndex = 0;
             this.button1.Text = "Sửa";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -66,7 +65,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Image = global::ThuVien.Properties.Resources.icons8_remove_50;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(246, 381);
+            this.button2.Location = new System.Drawing.Point(365, 380);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 52);
             this.button2.TabIndex = 0;
@@ -81,7 +80,7 @@
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.Image = global::ThuVien.Properties.Resources.icons8_plus_50;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(132, 381);
+            this.button3.Location = new System.Drawing.Point(251, 380);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 52);
             this.button3.TabIndex = 0;
@@ -131,34 +130,6 @@
             this.dgv.Size = new System.Drawing.Size(658, 236);
             this.dgv.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Sitka Text", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(687, 68);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "DANH MỤC SÁCH";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.Image = global::ThuVien.Properties.Resources.icons8_refresh_50;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(455, 381);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 52);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Refresh";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // id
             // 
             this.id.DataPropertyName = "book_id";
@@ -194,12 +165,24 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 130;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Sitka Text", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(687, 68);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "DANH MỤC SÁCH";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TableBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 440);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
@@ -224,7 +207,6 @@
         private GroupBox groupBox1;
         private DataGridView dgv;
         private Label label1;
-        private Button button5;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

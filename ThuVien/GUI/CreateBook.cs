@@ -15,8 +15,10 @@ namespace ThuVien.GUI
 {
     public partial class CreateBook : Form
     {
-        public CreateBook()
+        private DataGridView dgv;
+        public CreateBook(DataGridView dgv)
         {
+            this.dgv = dgv;
             InitializeComponent();
         }
 
@@ -33,6 +35,9 @@ namespace ThuVien.GUI
             if (isSuccess == true)
             {
                 MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
+                TableBookBUS busTableBookBUS = new TableBookBUS();
+                dgv.DataSource = busTableBookBUS.getData();
                 this.Hide();
             }
         }
