@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ThuVien.DAL
 {
-    internal class BookDAL
+    internal class UpdateBookDAL
     {
     }
 }

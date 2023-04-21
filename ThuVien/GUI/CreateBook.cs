@@ -33,9 +33,7 @@ namespace ThuVien.GUI
             if (isSuccess == true)
             {
                 MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbTenSach.Text = "";
-                txbNhaXuatBan.Text = "";
-                txbSoLuong.Text = "";
+                this.Hide();
             }
         }
     }

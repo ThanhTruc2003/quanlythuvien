@@ -12,6 +12,7 @@ namespace DAL
         public bool checkUser(string users_account, string users_password)
         {
             string querry = "SELECT * FROM UsersInformation WHERE users_account = '" + users_account + "'AND users_password = '" + users_password + "'";
+            
             SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
             DataTable dtable = new DataTable();

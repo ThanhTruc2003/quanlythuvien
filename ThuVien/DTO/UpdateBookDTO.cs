@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ThuVien.BUS
+namespace ThuVien.DTO
 {
-    internal class BookBUS
+    internal class UpdateBookDTO
     {
     }
 }
