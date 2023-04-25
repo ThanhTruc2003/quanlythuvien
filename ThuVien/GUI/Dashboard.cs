@@ -12,9 +12,25 @@ namespace ThuVien.GUI
 {
     public partial class Dashboard : Form
     {
+        bool isThoat = true;
         public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (isThoat)
+            {
+                Application.Exit();
+            }    
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TableBook TB = new TableBook();
+            TB.Show();
+            this.Hide();
         }
     }
 }

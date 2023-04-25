@@ -15,8 +15,10 @@ namespace ThuVien.GUI
 {
     public partial class CreateBook : Form
     {
-        public CreateBook()
+        private DataGridView dgv;
+        public CreateBook(DataGridView dgv)
         {
+            this.dgv = dgv;
             InitializeComponent();
         }
 
@@ -30,12 +32,13 @@ namespace ThuVien.GUI
             SoLuong = Convert.ToInt32(txbSoLuong.Text);
             CreateBookBUS bus = new CreateBookBUS();
             bool isSuccess = bus.Insert(new CreateBookDTO(TenSach, NhaXuatBan, SoLuong, SoLuong));
-            if(isSuccess)
+            if (isSuccess == true)
             {
                 MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbTenSach.Text = "";
-                txbNhaXuatBan.Text = "";
-                txbSoLuong.Text = "";
+        
+                TableBookBUS busTableBookBUS = new TableBookBUS();
+                dgv.DataSource = busTableBookBUS.getData();
+                this.Hide();
             }
         }
     }
