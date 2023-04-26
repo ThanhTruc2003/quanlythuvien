@@ -32,5 +32,12 @@ namespace ThuVien.GUI
             TB.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Student S = new Student();
+            S.Show();
+            this.Hide();
+        }
     }
 }

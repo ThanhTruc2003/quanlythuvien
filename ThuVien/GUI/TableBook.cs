@@ -27,11 +27,12 @@ namespace ThuVien.GUI
             dgv.DataSource = bus.getData();
         }
 
-        public void refreshData()
+ /*       public void refreshData()
         {
             TableBookBUS bus = new TableBookBUS();
             dgv.DataSource = bus.getData();
         }
+ */
         private void button3_Click(object sender, EventArgs e)
         {
             CreateBook CB = new CreateBook(dgv);
