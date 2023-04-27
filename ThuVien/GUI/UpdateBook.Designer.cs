@@ -162,6 +162,7 @@
             this.Controls.Add(this.txbTenSach);
             this.Controls.Add(this.label1);
             this.Name = "UpdateBook";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateBook";
             this.ResumeLayout(false);
             this.PerformLayout();

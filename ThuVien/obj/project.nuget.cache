@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cYBKWmKLY1jRscYHyqIm9LXb0A8vD4AiDnbJJjn91lpU2YQ4NYg+hL5FJzuEIajHF4rCQk9h1ck1Mdl5bYOHKw==",
+  "dgSpecHash": "sEG9TPlHbIWQTECewYiNTtWgwJsCUia9euYk0duaAEa6Intob72Fi2cLNfRrgCWihHt/ahFZi/9q8QUAWLmytQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo Thinkpad S3\\Downloads\\quanlythuvien-main\\quanlythuvien-main\\ThuVien\\ThuVien.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo Thinkpad S3\\Documents\\Quan ly thu vien\\ThuVien\\ThuVien.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo Thinkpad S3\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Lenovo Thinkpad S3\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
