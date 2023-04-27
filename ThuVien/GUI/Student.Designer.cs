@@ -89,7 +89,6 @@
             this.dgv.Location = new System.Drawing.Point(19, 32);
             this.dgv.Name = "dgv";
             this.dgv.RowTemplate.Height = 25;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv.Size = new System.Drawing.Size(898, 258);
             this.dgv.TabIndex = 0;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);

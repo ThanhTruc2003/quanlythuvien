@@ -67,9 +67,10 @@ namespace ThuVien.GUI
 
         private string Selected()
         {
-            int i = dgv.SelectedCells[0].RowIndex;
-            string selected = dgv.Rows[i].Cells[0].Value.ToString();
-            return selected;
+            int selectedIndex = dgv.SelectedCells[0].RowIndex; ;
+            DataGridViewRow selected = dgv.Rows[selectedIndex];
+            string selectedID = selected.Cells[0].Value.ToString();
+            return selectedID;
         }
         private void Delete_Click(object sender, EventArgs e)
         {
@@ -79,21 +80,24 @@ namespace ThuVien.GUI
             {
                 bus.Delete(student_selected);
                 dgv.DataSource = bus.getData();
+                txbMaSo.Text = "";
+                txbHoTen.Text = "";
+                txbSoDienThoai.Text = "";
+                txbNganh.Text = "";
+                txbDiaChi.Text = "";
                 MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                dgv.CurrentRow.Selected = true;
-                txbMaSo.Text = dgv.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txbHoTen.Text = dgv.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txbSoDienThoai.Text = dgv.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txbNganh.Text = dgv.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txbDiaChi.Text = dgv.Rows[e.RowIndex].Cells[4].Value.ToString();
-            }
+                int index = e.RowIndex;
+                DataGridViewRow selected = dgv.Rows[index];
+                txbMaSo.Text = selected.Cells[0].Value.ToString();
+                txbHoTen.Text = selected.Cells[1].Value.ToString();
+                txbSoDienThoai.Text = selected.Cells[2].Value.ToString();
+                txbNganh.Text = selected.Cells[3].Value.ToString();
+                txbDiaChi.Text = selected.Cells[4].Value.ToString();
         }
         private void Update_Click(object sender, EventArgs e)
         {

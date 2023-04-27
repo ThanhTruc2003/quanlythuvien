@@ -92,10 +92,10 @@ namespace DAL
 
             string sb = string.Format(@"update Student 
                                     set  
-                                    student_name = '{0}', 
+                                    student_name = N'{0}', 
                                     student_phone = '{1}', 
-                                    student_major = '{2}',
-                                    student_address = '{3}'
+                                    student_major = N'{2}',
+                                    student_address = N'{3}'
                                     where student_id = '{4}'",
                                     dto_student.student_name, dto_student.student_phone,
                                     dto_student.student_major, dto_student.student_address,
