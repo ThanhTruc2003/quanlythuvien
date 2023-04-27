@@ -13,7 +13,16 @@ namespace DTO
         public string student_phone { get; set; }
         public string student_major { get; set; }
         public string student_address { get; set; }
-        
+
+        public StudentDTO()
+        {
+            this.student_id = "";
+            this.student_name = "";
+            this.student_phone = "";
+            this.student_major = "";
+            this.student_address = "";
+        }
+
         public StudentDTO(string student_id, string student_name, string student_phone, string student_major, string student_address)
         {
             this.student_id = student_id;

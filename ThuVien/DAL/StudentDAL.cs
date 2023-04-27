@@ -62,10 +62,10 @@ namespace DAL
             }
             return false;
         }
-        public bool Delete(StudentDTO dto_student)
+        public bool Delete(string student_id)
         {
             string sb = string.Format(@"Delete from Student 
-                                         where student_id = '{0}'", dto_student.student_id);
+                                         where student_id = '{0}'", student_id);
             SqlCommand cmd = new SqlCommand(sb, conn);
             try
             {
@@ -86,6 +86,7 @@ namespace DAL
             }
             return true;
         }
+
         public bool Update(StudentDTO dto_student)
         {
 

@@ -36,10 +36,10 @@
             this.student_phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.student_major = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.student_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Create = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
+            this.Update = new System.Windows.Forms.Button();
+            this.Exit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,8 +89,10 @@
             this.dgv.Location = new System.Drawing.Point(19, 32);
             this.dgv.Name = "dgv";
             this.dgv.RowTemplate.Height = 25;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv.Size = new System.Drawing.Size(898, 258);
             this.dgv.TabIndex = 0;
+            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             // 
             // student_id
             // 
@@ -127,62 +129,69 @@
             this.student_address.Name = "student_address";
             this.student_address.Width = 205;
             // 
-            // button3
+            // Create
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Image = global::ThuVien.Properties.Resources.icons8_plus_50;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(520, 217);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 52);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Thêm";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Create.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Create.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Create.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Create.Image = global::ThuVien.Properties.Resources.icons8_plus_50;
+            this.Create.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Create.Location = new System.Drawing.Point(520, 217);
+            this.Create.Name = "Create";
+            this.Create.Size = new System.Drawing.Size(108, 52);
+            this.Create.TabIndex = 2;
+            this.Create.Text = "Thêm";
+            this.Create.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Create.UseVisualStyleBackColor = false;
+            this.Create.Click += new System.EventHandler(this.Create_Click);
             // 
-            // button2
+            // Delete
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Image = global::ThuVien.Properties.Resources.icons8_remove_50;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(634, 217);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 52);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Xóa";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.Delete.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Delete.Image = global::ThuVien.Properties.Resources.icons8_remove_50;
+            this.Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Delete.Location = new System.Drawing.Point(634, 217);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(99, 52);
+            this.Delete.TabIndex = 3;
+            this.Delete.Text = "Xóa";
+            this.Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Delete.UseVisualStyleBackColor = false;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // button1
+            // Update
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Image = global::ThuVien.Properties.Resources.icons8_edit_50;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(739, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 52);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Sửa";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.Update.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Update.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Update.Image = global::ThuVien.Properties.Resources.icons8_edit_50;
+            this.Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Update.Location = new System.Drawing.Point(739, 217);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(99, 52);
+            this.Update.TabIndex = 4;
+            this.Update.Text = "Sửa";
+            this.Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Update.UseVisualStyleBackColor = false;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
-            // button4
+            // Exit
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Image = global::ThuVien.Properties.Resources.icons8_close_window_50;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(844, 217);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 52);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Thoát";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.Exit.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Exit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Exit.Image = global::ThuVien.Properties.Resources.icons8_close_window_50;
+            this.Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Exit.Location = new System.Drawing.Point(844, 217);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(100, 52);
+            this.Exit.TabIndex = 5;
+            this.Exit.Text = "Thoát";
+            this.Exit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Exit.UseVisualStyleBackColor = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // label2
             // 
@@ -278,7 +287,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 594);
             this.Controls.Add(this.txbDiaChi);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Create);
             this.Controls.Add(this.txbNganh);
             this.Controls.Add(this.txbSoDienThoai);
             this.Controls.Add(this.txbHoTen);
@@ -288,12 +297,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.Update);
+            this.Controls.Add(this.Delete);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "Student";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
             this.Load += new System.EventHandler(this.Student_Load);
             this.groupBox1.ResumeLayout(false);
@@ -308,10 +318,10 @@
         private Label label1;
         private GroupBox groupBox1;
         private DataGridView dgv;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Button button4;
+        private Button Create;
+        private Button Delete;
+        private Button Update;
+        private Button Exit;
         private Label label2;
         private Label label3;
         private Label label4;
