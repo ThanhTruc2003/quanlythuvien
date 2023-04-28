@@ -39,5 +39,26 @@ namespace ThuVien.GUI
             S.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            BorrowBook BB = new BorrowBook();
+            BB.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ReturnBook RB = new ReturnBook();
+            RB.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            InformationBook IB = new InformationBook();
+            IB.Show();
+            this.Hide();
+        }
     }
 }
