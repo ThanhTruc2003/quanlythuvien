@@ -233,6 +233,16 @@ namespace ThuVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_left_503 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-left-503", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_login_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-login-100", resourceCulture);

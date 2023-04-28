@@ -4,6 +4,9 @@
     <Compile Update="GUI\BorrowBook.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\BorrowBook_by_student_id.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\CreateBook.cs">
       <SubType>Form</SubType>
     </Compile>

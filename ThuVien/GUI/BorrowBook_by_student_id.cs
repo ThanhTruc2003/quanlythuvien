@@ -10,24 +10,17 @@ using System.Windows.Forms;
 
 namespace ThuVien.GUI
 {
-    public partial class InformationBook : Form
+    public partial class BorrowBook_by_student_id : Form
     {
-        public InformationBook()
+        public BorrowBook_by_student_id()
         {
             InitializeComponent();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Dashboard DB = new Dashboard();
-            DB.Show();
-            this.Hide();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            BorrowBook_by_student_id BBID = new BorrowBook_by_student_id();
-            BBID.Show();
+            InformationBook IB = new InformationBook();
+            IB.Show();
             this.Hide();
         }
     }
