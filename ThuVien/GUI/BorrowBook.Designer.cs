@@ -28,30 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txbMaSinhVien = new System.Windows.Forms.TextBox();
+            this.cbo = new System.Windows.Forms.ComboBox();
+            this.borrowBookDALBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.borrowBookDALBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbBookName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbAvailableQuantity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txbQuantity_Borrow = new System.Windows.Forms.TextBox();
+            this.btThem = new System.Windows.Forms.Button();
+            this.btHoanTat = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableBookDALBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableBookDALBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.borrowBookDALBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.borrowBookDALBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBookDALBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBookDALBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,23 +73,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã sinh viên: ";
             // 
-            // textBox1
+            // txbMaSinhVien
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(401, 35);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(314, 28);
-            this.textBox1.TabIndex = 1;
+            this.txbMaSinhVien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbMaSinhVien.Location = new System.Drawing.Point(401, 35);
+            this.txbMaSinhVien.Multiline = true;
+            this.txbMaSinhVien.Name = "txbMaSinhVien";
+            this.txbMaSinhVien.Size = new System.Drawing.Size(314, 28);
+            this.txbMaSinhVien.TabIndex = 1;
             // 
-            // comboBox1
+            // cbo
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(195, 87);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(221, 32);
-            this.comboBox1.TabIndex = 2;
+            this.cbo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbo.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbo.FormattingEnabled = true;
+            this.cbo.Location = new System.Drawing.Point(195, 87);
+            this.cbo.Name = "cbo";
+            this.cbo.Size = new System.Drawing.Size(221, 32);
+            this.cbo.TabIndex = 2;
+            this.cbo.SelectedIndexChanged += new System.EventHandler(this.cbo_SelectedIndexChanged);
+            // 
+            // borrowBookDALBindingSource1
+            // 
+            this.borrowBookDALBindingSource1.DataSource = typeof(DAL.BorrowBookDAL);
+            // 
+            // borrowBookDALBindingSource
+            // 
+            this.borrowBookDALBindingSource.DataSource = typeof(DAL.BorrowBookDAL);
             // 
             // label2
             // 
@@ -102,15 +121,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Tên sách:";
             // 
-            // textBox2
+            // txbBookName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(195, 139);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(221, 32);
-            this.textBox2.TabIndex = 5;
+            this.txbBookName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbBookName.Location = new System.Drawing.Point(195, 139);
+            this.txbBookName.Multiline = true;
+            this.txbBookName.Name = "txbBookName";
+            this.txbBookName.ReadOnly = true;
+            this.txbBookName.Size = new System.Drawing.Size(221, 32);
+            this.txbBookName.TabIndex = 5;
             // 
             // label4
             // 
@@ -122,15 +141,15 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Số lượng có sẵn:";
             // 
-            // textBox3
+            // txbAvailableQuantity
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(195, 188);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(221, 32);
-            this.textBox3.TabIndex = 7;
+            this.txbAvailableQuantity.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbAvailableQuantity.Location = new System.Drawing.Point(195, 188);
+            this.txbAvailableQuantity.Multiline = true;
+            this.txbAvailableQuantity.Name = "txbAvailableQuantity";
+            this.txbAvailableQuantity.ReadOnly = true;
+            this.txbAvailableQuantity.Size = new System.Drawing.Size(221, 32);
+            this.txbAvailableQuantity.TabIndex = 7;
             // 
             // label5
             // 
@@ -142,37 +161,41 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Số lượng mượn:";
             // 
-            // textBox4
+            // txbQuantity_Borrow
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(195, 238);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(221, 32);
-            this.textBox4.TabIndex = 9;
+            this.txbQuantity_Borrow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbQuantity_Borrow.Location = new System.Drawing.Point(195, 238);
+            this.txbQuantity_Borrow.Multiline = true;
+            this.txbQuantity_Borrow.Name = "txbQuantity_Borrow";
+            this.txbQuantity_Borrow.Size = new System.Drawing.Size(221, 32);
+            this.txbQuantity_Borrow.TabIndex = 9;
             // 
-            // button1
+            // btThem
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(195, 286);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btThem.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThem.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btThem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btThem.Location = new System.Drawing.Point(195, 286);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(75, 32);
+            this.btThem.TabIndex = 10;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
-            // button2
+            // btHoanTat
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(310, 327);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 33);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Hoàn tất";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btHoanTat.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btHoanTat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btHoanTat.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btHoanTat.Location = new System.Drawing.Point(310, 327);
+            this.btHoanTat.Name = "btHoanTat";
+            this.btHoanTat.Size = new System.Drawing.Size(106, 33);
+            this.btHoanTat.TabIndex = 11;
+            this.btHoanTat.Text = "Hoàn tất";
+            this.btHoanTat.UseVisualStyleBackColor = false;
+            this.btHoanTat.Click += new System.EventHandler(this.btHoanTat_Click);
             // 
             // dateTimePicker1
             // 
@@ -185,32 +208,33 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(161, 25);
             this.dateTimePicker1.TabIndex = 12;
             // 
-            // dataGridView1
+            // dgv
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridView1.Location = new System.Drawing.Point(451, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(493, 273);
-            this.dataGridView1.TabIndex = 13;
+            this.dgv.GridColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dgv.Location = new System.Drawing.Point(451, 87);
+            this.dgv.Name = "dgv";
+            this.dgv.RowTemplate.Height = 25;
+            this.dgv.Size = new System.Drawing.Size(493, 273);
+            this.dgv.TabIndex = 13;
             // 
             // Column1
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.DataPropertyName = "book_id";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column1.HeaderText = "Mã sách";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -218,8 +242,9 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column2.DataPropertyName = "book_name";
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column2.HeaderText = "Tên sách";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -227,8 +252,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.DataPropertyName = "quantity_borrow";
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column3.HeaderText = "Số lượng";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -245,6 +271,14 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // tableBookDALBindingSource
+            // 
+            this.tableBookDALBindingSource.DataSource = typeof(DAL.TableBookDAL);
+            // 
+            // tableBookDALBindingSource1
+            // 
+            this.tableBookDALBindingSource1.DataSource = typeof(DAL.TableBookDAL);
+            // 
             // BorrowBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -252,25 +286,30 @@
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(976, 381);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.btHoanTat);
+            this.Controls.Add(this.btThem);
+            this.Controls.Add(this.txbQuantity_Borrow);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txbAvailableQuantity);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txbBookName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbo);
+            this.Controls.Add(this.txbMaSinhVien);
             this.Controls.Add(this.label1);
             this.Name = "BorrowBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BorrowBook";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.BorrowBook_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.borrowBookDALBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.borrowBookDALBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBookDALBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBookDALBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,22 +318,26 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
+        private TextBox txbMaSinhVien;
+        private ComboBox cbo;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txbBookName;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox txbAvailableQuantity;
         private Label label5;
-        private TextBox textBox4;
-        private Button button1;
-        private Button button2;
+        private TextBox txbQuantity_Borrow;
+        private Button btThem;
+        private Button btHoanTat;
         private DateTimePicker dateTimePicker1;
-        private DataGridView dataGridView1;
+        private DataGridView dgv;
+        private PictureBox pictureBox1;
+        private BindingSource tableBookDALBindingSource;
+        private BindingSource tableBookDALBindingSource1;
+        private BindingSource borrowBookDALBindingSource;
+        private BindingSource borrowBookDALBindingSource1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private PictureBox pictureBox1;
     }
 }

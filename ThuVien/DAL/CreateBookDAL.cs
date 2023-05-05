@@ -17,7 +17,7 @@ namespace DAL
                                         publisher_name, 
                                         quantity, 
                                         available_quantity)values 
-                                        (N'{0}','{1}',{2},{3})", dto_book.book_name, dto_book.publisher_name, dto_book.quantity, dto_book.available_quantity);
+                                        (N'{0}',N'{1}',{2},{3})", dto_book.book_name, dto_book.publisher_name, dto_book.quantity, dto_book.available_quantity);
             SqlCommand cmd = new SqlCommand(sb, conn);
             try
             {

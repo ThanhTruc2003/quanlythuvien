@@ -43,8 +43,8 @@ namespace DAL
         {
 
             string sb = string.Format(@"update BooksStore 
-                                    set book_name = '{0}', 
-                                    publisher_name = '{1}', 
+                                    set book_name = N'{0}', 
+                                    publisher_name = N'{1}', 
                                     quantity = {2}, 
                                     available_quantity = {3}
                                     where book_id = {4}",
