@@ -16,7 +16,7 @@ namespace ThuVien.GUI
 {
     public partial class BorrowBook : Form
     {
-        private DataTable dt;
+        private DataTable cbo_dt;
         private DataTable booksSelected = new DataTable();
         public BorrowBook()
         {
@@ -36,8 +36,8 @@ namespace ThuVien.GUI
         private void BorrowBook_Load(object sender, EventArgs e)
         {
             BorrowBookBUS bus = new BorrowBookBUS();
-            this.dt = bus.getData();
-            cbo.DataSource = this.dt;
+            this.cbo_dt = bus.getData();
+            cbo.DataSource = this.cbo_dt;
             cbo.ValueMember = "book_id";
         }
 
@@ -46,8 +46,7 @@ namespace ThuVien.GUI
             int index = cbo.SelectedIndex;
             if (index >= 0)
             {
-                BorrowBookBUS bus = new BorrowBookBUS();
-                DataRow dr = this.dt.Rows[index];
+                DataRow dr = this.cbo_dt.Rows[index];
                 txbBookName.Text = dr["book_name"].ToString();
                 txbAvailableQuantity.Text = dr["available_quantity"].ToString();
             }
@@ -62,16 +61,16 @@ namespace ThuVien.GUI
             else
             {
                 int index = cbo.SelectedIndex;
-                DataRow dr = this.dt.Rows[index];
+                DataRow dr = this.cbo_dt.Rows[index];
                 DataRow newRow = this.booksSelected.NewRow();
                 newRow["book_id"] = dr["book_id"].ToString();
-                newRow["book_name"] = txbBookName.Text;
+                newRow["book_name"] = dr["book_name"].ToString();
                 newRow["quantity_borrow"] = txbQuantity_Borrow.Text;
                 this.booksSelected.Rows.Add(newRow);
                 dgv.DataSource = this.booksSelected;
-                if (this.dt.Rows.Count > 0)
+                if (this.cbo_dt.Rows.Count > 0)
                 {
-                    this.dt.Rows.Remove(this.dt.Rows[index]);
+                    this.cbo_dt.Rows.Remove(this.cbo_dt.Rows[index]);
                 }
                 txbBookName.Text = "";
                 txbAvailableQuantity.Text = "";
@@ -103,7 +102,6 @@ namespace ThuVien.GUI
                     dto.date_of_borrow = now;
                     dto.date_of_return = date;
                     dto.student_id = MaSinhVien;
-                    dto.note = "";
                     bus.insertBorrowBook(dto);
                 }
                 MessageBox.Show("Mượn sách thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

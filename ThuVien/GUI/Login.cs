@@ -51,19 +51,30 @@ namespace ThuVien.GUI
             string TaiKhoan, MatKhau;
             TaiKhoan = txbTaikhoan.Text;
             MatKhau = txbMatkhau.Text;
-            LoginBUS bus = new LoginBUS();
-            bool isSuccess = bus.Check(new LoginDTO(TaiKhoan, MatKhau));
-            if (isSuccess == true)
+            if (txbTaikhoan.Text == "" && txbMatkhau.Text == "")
             {
-                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Dashboard DB = new Dashboard();
-                DB.Show();
-                this.Hide();
-            }
+                MessageBox.Show("Vui lòng điền thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
+            else if (txbTaikhoan.Text == "" || txbMatkhau.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
             else
             {
-                MessageBox.Show("Đăng nhập không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                LoginBUS bus = new LoginBUS();
+                bool isSuccess = bus.Check(new LoginDTO(TaiKhoan, MatKhau));
+                if (isSuccess == true)
+                {
+                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Dashboard DB = new Dashboard();
+                    DB.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }    
         }
     }
 }

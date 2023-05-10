@@ -36,19 +36,31 @@ namespace ThuVien.GUI
             DiaChi = txbDiaChi.Text;
             TaiKhoan = txbTaiKhoan.Text;
             Matkhau = txbMatKhau.Text;
-            RegisterBUS bus = new RegisterBUS();
-            bool isSuccess = bus.Insert(new RegisterDTO(HoTen, Email, SoDienThoai, DiaChi, TaiKhoan, Matkhau));
-            if (isSuccess == true)
+
+            if (txbHoTen.Text == "" && txbEmail.Text == "" && txbSoDienThoai.Text == "" && txbDiaChi.Text == "" && txbTaiKhoan.Text == "" && txbMatKhau.Text == "")
             {
-                MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Login LG = new Login();
-                LG.Show();
-                this.Hide();
+                MessageBox.Show("Vui lòng điền thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txbHoTen.Text == "" || txbEmail.Text == "" || txbSoDienThoai.Text == "" || txbDiaChi.Text == "" || txbTaiKhoan.Text == "" || txbMatKhau.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Tài khoản đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }    
+                RegisterBUS bus = new RegisterBUS();
+                bool isSuccess = bus.Insert(new RegisterDTO(HoTen, Email, SoDienThoai, DiaChi, TaiKhoan, Matkhau));
+                if (isSuccess == true)
+                {
+                    MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Login LG = new Login();
+                    LG.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } 
         }
     }
 }

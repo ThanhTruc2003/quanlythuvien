@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class BorrowBookDTO
+    public class ReturnBookDTO
     {
         public Int32 Borrower_number { get; set; }
         public string student_id { get; set; }
@@ -17,11 +17,11 @@ namespace DTO
         public DateTime date_of_return { get; set; }
         public string status_book { get; set; }
 
-        public BorrowBookDTO()
+        public ReturnBookDTO()
         {
 
         }
-        public BorrowBookDTO(Int32 Borrower_number, string student_id, Int32 book_id, Int32 quantity_borrow, Int32 quantity_returned, DateTime date_of_borrow, DateTime date_of_return, string status_book )
+        public ReturnBookDTO(Int32 Borrower_number, string student_id, Int32 book_id, Int32 quantity_borrow, Int32 quantity_returned, DateTime date_of_borrow, DateTime date_of_return, string status_book)
         {
             this.Borrower_number = Borrower_number;
             this.student_id = student_id;

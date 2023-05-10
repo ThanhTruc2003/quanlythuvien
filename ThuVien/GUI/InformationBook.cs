@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
+using DAL;
+using DTO;
+using ThuVien.BUS;
+
 
 namespace ThuVien.GUI
 {
@@ -25,10 +30,25 @@ namespace ThuVien.GUI
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            BorrowBook_by_student_id BBID = new BorrowBook_by_student_id();
-            BBID.Show();
+        { 
+            string selectedRow = Selected();
+            BorrowBook_by_student_id BB = new BorrowBook_by_student_id();
+            BB.txbMaSinhVien.Text = dgv.CurrentRow.Cells[0].Value.ToString();
+            BB.txbHoTen.Text = dgv.CurrentRow.Cells[1].Value.ToString();
+            BB.Show();
             this.Hide();
+        }
+        private void InformationBook_Load(object sender, EventArgs e)
+        {
+            InformationBookBUS bus = new InformationBookBUS();
+            dgv.DataSource = bus.status_bookByStudent();
+        }
+        private string Selected()
+        {
+            int selectedIndex = dgv.SelectedCells[0].RowIndex; ;
+            DataGridViewRow selected = dgv.Rows[selectedIndex];
+            string selectedID = selected.Cells[0].Value.ToString();
+            return selectedID;
         }
     }
 }

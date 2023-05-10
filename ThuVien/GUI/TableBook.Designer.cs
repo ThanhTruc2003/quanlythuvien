@@ -47,6 +47,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Image = global::ThuVien.Properties.Resources.icons8_edit_50;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -62,6 +63,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Image = global::ThuVien.Properties.Resources.icons8_remove_50;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -77,6 +79,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.Image = global::ThuVien.Properties.Resources.icons8_plus_50;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,6 +95,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.Image = global::ThuVien.Properties.Resources.icons8_close_window_50;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

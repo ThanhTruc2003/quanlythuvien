@@ -56,9 +56,8 @@ namespace DAL
                                         quantity_returned,
                                         date_of_borrow,
                                         date_of_return,
-                                        note,
                                         status_book) values 
-                                        (N'{0}',{1},{2},{3},'{4}','{5}','{6}',N'{7}')", dto_borrowbook.student_id, dto_borrowbook.book_id, dto_borrowbook.quantity_borrow, 0, dto_borrowbook.date_of_borrow, dto_borrowbook.date_of_return, dto_borrowbook.note, "Chưa trả");
+                                        (N'{0}',{1},{2},{3},'{4}','{5}',N'{7}')", dto_borrowbook.student_id, dto_borrowbook.book_id, dto_borrowbook.quantity_borrow, 0, dto_borrowbook.date_of_borrow, dto_borrowbook.date_of_return, "Chưa trả");
             SqlCommand cmd = new SqlCommand(query, con);
             try
             {

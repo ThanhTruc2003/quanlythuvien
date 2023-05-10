@@ -30,22 +30,22 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txbMaSinhVien = new System.Windows.Forms.TextBox();
+            this.btNhap = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbQuantity_Borrow = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txbQuantity_Return = new System.Windows.Forms.TextBox();
+            this.btThem = new System.Windows.Forms.Button();
+            this.btHoanTat = new System.Windows.Forms.Button();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.book_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity_returned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,26 +59,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã sinh viên:";
             // 
-            // textBox1
+            // txbMaSinhVien
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(345, 32);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(319, 30);
-            this.textBox1.TabIndex = 1;
+            this.txbMaSinhVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbMaSinhVien.Location = new System.Drawing.Point(345, 32);
+            this.txbMaSinhVien.Multiline = true;
+            this.txbMaSinhVien.Name = "txbMaSinhVien";
+            this.txbMaSinhVien.Size = new System.Drawing.Size(319, 30);
+            this.txbMaSinhVien.TabIndex = 1;
             // 
-            // button1
+            // btNhap
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(679, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 48);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Nhập";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btNhap.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btNhap.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btNhap.Location = new System.Drawing.Point(679, 23);
+            this.btNhap.Name = "btNhap";
+            this.btNhap.Size = new System.Drawing.Size(99, 48);
+            this.btNhap.TabIndex = 2;
+            this.btNhap.Text = "Nhập";
+            this.btNhap.UseVisualStyleBackColor = false;
+            this.btNhap.Click += new System.EventHandler(this.btNhap_Click);
             // 
             // label2
             // 
@@ -90,15 +91,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Chọn mã sách:";
             // 
-            // comboBox1
+            // cbo
             // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(215, 96);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 31);
-            this.comboBox1.TabIndex = 4;
+            this.cbo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbo.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbo.FormattingEnabled = true;
+            this.cbo.Location = new System.Drawing.Point(215, 96);
+            this.cbo.Name = "cbo";
+            this.cbo.Size = new System.Drawing.Size(220, 31);
+            this.cbo.TabIndex = 4;
+            this.cbo.SelectedIndexChanged += new System.EventHandler(this.cbo_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -110,14 +112,15 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Số lượng đã mượn:";
             // 
-            // textBox2
+            // txbQuantity_Borrow
             // 
-            this.textBox2.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(215, 146);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(220, 32);
-            this.textBox2.TabIndex = 6;
+            this.txbQuantity_Borrow.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbQuantity_Borrow.Location = new System.Drawing.Point(215, 146);
+            this.txbQuantity_Borrow.Multiline = true;
+            this.txbQuantity_Borrow.Name = "txbQuantity_Borrow";
+            this.txbQuantity_Borrow.ReadOnly = true;
+            this.txbQuantity_Borrow.Size = new System.Drawing.Size(220, 32);
+            this.txbQuantity_Borrow.TabIndex = 6;
             // 
             // label4
             // 
@@ -129,40 +132,42 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Số lượng trả:";
             // 
-            // textBox3
+            // txbQuantity_Return
             // 
-            this.textBox3.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(215, 196);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(220, 32);
-            this.textBox3.TabIndex = 8;
+            this.txbQuantity_Return.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbQuantity_Return.Location = new System.Drawing.Point(215, 196);
+            this.txbQuantity_Return.Multiline = true;
+            this.txbQuantity_Return.Name = "txbQuantity_Return";
+            this.txbQuantity_Return.Size = new System.Drawing.Size(220, 32);
+            this.txbQuantity_Return.TabIndex = 8;
             // 
-            // button2
+            // btThem
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(215, 256);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 35);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btThem.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThem.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btThem.Location = new System.Drawing.Point(215, 256);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(75, 35);
+            this.btThem.TabIndex = 9;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
-            // button3
+            // btHoanTat
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(331, 256);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 35);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Hoàn tất";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btHoanTat.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btHoanTat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btHoanTat.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btHoanTat.Location = new System.Drawing.Point(331, 256);
+            this.btHoanTat.Name = "btHoanTat";
+            this.btHoanTat.Size = new System.Drawing.Size(104, 35);
+            this.btHoanTat.TabIndex = 10;
+            this.btHoanTat.Text = "Hoàn tất";
+            this.btHoanTat.UseVisualStyleBackColor = false;
+            this.btHoanTat.Click += new System.EventHandler(this.btHoanTat_Click);
             // 
-            // dataGridView1
+            // dgv
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -171,38 +176,41 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(476, 93);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(484, 198);
-            this.dataGridView1.TabIndex = 11;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.book_id,
+            this.book_name,
+            this.quantity_returned});
+            this.dgv.Location = new System.Drawing.Point(476, 93);
+            this.dgv.Name = "dgv";
+            this.dgv.RowTemplate.Height = 25;
+            this.dgv.Size = new System.Drawing.Size(484, 198);
+            this.dgv.TabIndex = 11;
             // 
-            // Column1
+            // book_id
             // 
-            this.Column1.HeaderText = "Mã sách";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 130;
+            this.book_id.DataPropertyName = "book_id";
+            this.book_id.HeaderText = "Mã sách";
+            this.book_id.Name = "book_id";
+            this.book_id.ReadOnly = true;
+            this.book_id.Width = 130;
             // 
-            // Column2
+            // book_name
             // 
-            this.Column2.HeaderText = "Tên sách";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 180;
+            this.book_name.DataPropertyName = "book_name";
+            this.book_name.HeaderText = "Tên sách";
+            this.book_name.Name = "book_name";
+            this.book_name.ReadOnly = true;
+            this.book_name.Width = 180;
             // 
-            // Column3
+            // quantity_returned
             // 
-            this.Column3.HeaderText = "Số lượng trả";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 130;
+            this.quantity_returned.DataPropertyName = "quantity_returned";
+            this.quantity_returned.HeaderText = "Số lượng trả";
+            this.quantity_returned.Name = "quantity_returned";
+            this.quantity_returned.ReadOnly = true;
+            this.quantity_returned.Width = 130;
             // 
             // pictureBox1
             // 
@@ -222,22 +230,22 @@
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(990, 307);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.btHoanTat);
+            this.Controls.Add(this.btThem);
+            this.Controls.Add(this.txbQuantity_Return);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txbQuantity_Borrow);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btNhap);
+            this.Controls.Add(this.txbMaSinhVien);
             this.Controls.Add(this.label1);
             this.Name = "ReturnBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReturnBook";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,20 +255,20 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox txbMaSinhVien;
+        private Button btNhap;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox cbo;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txbQuantity_Borrow;
         private Label label4;
-        private TextBox textBox3;
-        private Button button2;
-        private Button button3;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
+        private TextBox txbQuantity_Return;
+        private Button btThem;
+        private Button btHoanTat;
+        private DataGridView dgv;
         private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn book_id;
+        private DataGridViewTextBoxColumn book_name;
+        private DataGridViewTextBoxColumn quantity_returned;
     }
 }

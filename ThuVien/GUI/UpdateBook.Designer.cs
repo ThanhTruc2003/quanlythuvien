@@ -39,6 +39,7 @@
             this.lbBook_ID = new System.Windows.Forms.Label();
             this.txbSoLuongCoSan = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -89,6 +90,7 @@
             // 
             this.txbSoLuong.Location = new System.Drawing.Point(177, 137);
             this.txbSoLuong.Name = "txbSoLuong";
+            this.txbSoLuong.ReadOnly = true;
             this.txbSoLuong.Size = new System.Drawing.Size(257, 23);
             this.txbSoLuong.TabIndex = 7;
             // 
@@ -99,9 +101,9 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = global::ThuVien.Properties.Resources.icons8_available_updates_48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(256, 207);
+            this.button1.Location = new System.Drawing.Point(247, 210);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 49);
+            this.button1.Size = new System.Drawing.Size(110, 46);
             this.button1.TabIndex = 9;
             this.button1.Text = "Sửa";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -121,12 +123,14 @@
             // lbBook_ID
             // 
             this.lbBook_ID.AutoSize = true;
-            this.lbBook_ID.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbBook_ID.Location = new System.Drawing.Point(177, 29);
+            this.lbBook_ID.BackColor = System.Drawing.SystemColors.Window;
+            this.lbBook_ID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbBook_ID.Location = new System.Drawing.Point(180, 32);
             this.lbBook_ID.Name = "lbBook_ID";
-            this.lbBook_ID.Size = new System.Drawing.Size(24, 23);
+            this.lbBook_ID.Size = new System.Drawing.Size(17, 15);
             this.lbBook_ID.TabIndex = 11;
             this.lbBook_ID.Text = "id";
+            this.lbBook_ID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txbSoLuongCoSan
             // 
@@ -145,6 +149,14 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Số lượng có sẵn:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(177, 29);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(257, 23);
+            this.textBox1.TabIndex = 14;
+            // 
             // UpdateBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -161,6 +173,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txbTenSach);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Name = "UpdateBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateBook";
@@ -182,5 +195,6 @@
         private Label lbBook_ID;
         private TextBox txbSoLuongCoSan;
         private Label label5;
+        private TextBox textBox1;
     }
 }

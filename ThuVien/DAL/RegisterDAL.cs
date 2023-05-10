@@ -19,9 +19,9 @@ namespace DAL
 
             if (dtable.Rows.Count > 0)
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
 
         public bool Insert(RegisterDTO dto_register)
@@ -53,7 +53,7 @@ namespace DAL
             {
                 conn.Close();
             }
-            return true;
+            return false;
         }
     }
 }
