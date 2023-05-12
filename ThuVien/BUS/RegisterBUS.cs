@@ -11,9 +11,9 @@ namespace BUS
         {
             if (dal.checkUser(dto_register.users_account))
             {
-                return true;
+                return dal.Insert(dto_register);
             }
-            return dal.Insert(dto_register);
+            return false;
         }
     }
 }

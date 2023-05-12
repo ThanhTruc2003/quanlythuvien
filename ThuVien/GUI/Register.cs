@@ -49,7 +49,7 @@ namespace ThuVien.GUI
             {
                 RegisterBUS bus = new RegisterBUS();
                 bool isSuccess = bus.Insert(new RegisterDTO(HoTen, Email, SoDienThoai, DiaChi, TaiKhoan, Matkhau));
-                if (isSuccess == true)
+                if (isSuccess)
                 {
                     MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Login LG = new Login();

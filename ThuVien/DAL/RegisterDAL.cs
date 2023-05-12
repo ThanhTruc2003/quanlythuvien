@@ -19,9 +19,9 @@ namespace DAL
 
             if (dtable.Rows.Count > 0)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
         public bool Insert(RegisterDTO dto_register)
